@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+
+html, body {
+  background-color: $primary-color;
+}
+
+h1 {
+  color: $third-color;
+  text-shadow: $secondary-color 2px 2px 10px;
+}
+
+h2 {
+  color: $sixth-color;
+}
+
+header{
+  /* ESPACEMENT INTÉRIEUR : 0px haut/bas, 20px gauche/droite. */
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+}
+
+.btn {
+  //width: 200px;
+  padding: 15px;
+  margin: 15px;
+  border: none;
+  background: $secondary-color;
+  color: $sixth-color;
+  border-bottom: 3px solid $fourth-color;
+  box-shadow: $fourth-color 1px 1px 10px 0px;
+}
+
+/* Un bouton classique mais plus large. */
+.btn-wide {
+  width: 400px;
+}
+

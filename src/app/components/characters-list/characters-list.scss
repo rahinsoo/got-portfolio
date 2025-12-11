@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+/* Un bouton classique mais avec des angles ronds. */
+.btn-round {
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid $fourth-color;
+}
+
+.grid{
+  /* DÉCLENCHEUR FLEXBOX : Rend le conteneur prêt à organiser ses projets enfants. */
+  display: flex;
+  /* ALIGNEMENT SECONDAIRE : Centre les projets verticalement (sur l'axe croisé). */
+  align-items: center;
+  /* JUSTIFY-CONTENT : Distribue l'espace autour et entre les projets horizontalement. */
+  justify-content:space-around;
+  /* FLEX-WRAP : Permet aux projets de passer à la ligne lorsqu'il n'y a plus assez d'espace. */
+  flex-wrap: wrap;
+}

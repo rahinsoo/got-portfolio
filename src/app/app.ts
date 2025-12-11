@@ -23,16 +23,33 @@ export class App implements OnInit {
   protected charactersToGiveToChild!: Characters[];
   protected continentsToGiveToChild!: Continents[];
 
+  protected filterCharacters !: Characters[];
+
   // On subscribe() uniquement sur les Observables.
   ngOnInit() {
+    this.getCharactersInTemplate();
+    this.getAllContinentsInTemplate();
+  }
+
+  protected oneSearch(term: string) {
+    this.filterCharacters = this.charactersToGiveToChild.filter((character :Characters) => {
+      const fullName = character.fullName ?? '';
+      return  fullName.toLowerCase().includes(term.toLowerCase())
+    });
+  }
+
+  private getAllContinentsInTemplate () {
+    this.continentsService.getContinents().subscribe((continentsFromApi: Continents[]) => {
+      this.continentsToGiveToChild = continentsFromApi;
+      this.cdr.detectChanges();
+    })
+  }
+
+  private getCharactersInTemplate () {
     this.charactersService.getCharacters().subscribe((charactersFromApi: Characters[]) => {
       this.charactersToGiveToChild = charactersFromApi;
+      this.filterCharacters = charactersFromApi;
       this.cdr.detectChanges();
-    });
-      this.continentsService.getContinents().subscribe((continentsFromApi: Continents[]) => {
-        this.continentsToGiveToChild = continentsFromApi;
-        this.cdr.detectChanges();
-      });
-
-    };
+    })
   }
+}

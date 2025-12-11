@@ -1,12 +1,14 @@
+<h2>List of Characters</h2>
 @if (charactersFromParent.length > 0) {
-  <div class="characters-wrapper">
+  <div class="characters-wrapper grid">
     <!--  @for pour itérer sur notre tableau charactersFromApi-->
     <!--  track OBLIGATOIRE pour éviter les pertes de performances / rattacher à une propriété unique.-->
     @for (character of charactersFromParent; track character.id) {
-      <div class="character-card">
-        <h1>{{ character.fullName }}</h1>
-        <p>{{ character.title }}</p>
-        <strong>{{ character.family }}</strong>
+      <div class="btn btn-wide btn-round">
+        <img src="{{ character.imageUrl}}" alt="Image of {{ character.image }}" />
+        <h3>∇ {{ character.fullName }}</h3>
+        <p>∴ {{ character.title }}</p>
+        <p><strong>ψ {{ character.family }}</strong></p>
       </div>
     }
   </div>
