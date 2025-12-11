@@ -1,18 +1,40 @@
-<h2>List of Characters</h2>
-@if (charactersFromParent.length > 0) {
-  <div class="characters-wrapper grid">
-    <!--  @for pour itérer sur notre tableau charactersFromApi-->
-    <!--  track OBLIGATOIRE pour éviter les pertes de performances / rattacher à une propriété unique.-->
-    @for (character of charactersFromParent; track character.id) {
-      <div class="btn btn-wide btn-round">
-        <img src="{{ character.imageUrl}}" alt="Image of {{ character.image }}" />
-        <h3>∇ {{ character.fullName }}</h3>
-        <p>∴ {{ character.title }}</p>
-        <p><strong>ψ {{ character.family }}</strong></p>
-      </div>
-    }
-  </div>
-} @else {
-  <p>No characters found</p>
-}
+<section class="got-characters-section">
+  <h2 class="got-title">List of Characters</h2>
 
+  @if (charactersFromParent. length > 0) {
+    <div class="characters-grid">
+      <!-- track character.id pour la performance -->
+      @for (character of charactersFromParent; track character.id) {
+        <article class="character-card">
+          <!-- Wrapper pour maintenir le ratio d'image -->
+          <div class="character-image-wrapper">
+            <img
+              [src]="character.imageUrl"
+              [alt]="'Portrait of ' + character.fullName"
+              class="character-image"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Informations du personnage -->
+          <div class="character-info">
+            <h3 class="character-name">
+              <span class="sigil">∇</span> {{ character.fullName }}
+            </h3>
+            <p class="character-title">
+              <span class="icon">∴</span> {{ character. title }}
+            </p>
+            <p class="character-family">
+              <span class="icon">ψ</span> House {{ character.family }}
+            </p>
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <p class="no-data-message">
+      <span class="raven-icon">🦅</span>
+      The ravens have brought no news...
+    </p>
+  }
+</section>

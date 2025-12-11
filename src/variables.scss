@@ -1,12 +1,82 @@
-$primary-color: #14150F;
-$secondary-color: #1D1C17;
-$third-color: #794F1D;
-$fourth-color: #360A09;
-$fifth-color: #082314;
-$sixth-color: #D1B488;
-$seventh-color: #5D271B;
-$height-color: #39442C;
+// ============================================
+// 🎨 PALETTE GAME OF THRONES
+// ============================================
+$primary-color: #14150F;      // Noir Westeros (fond)
+$secondary-color: #1D1C17;    // Gris nuit (cartes)
+$third-color: #794F1D;        // Or Lannister (accents)
+$fourth-color: #360A09;       // Rouge sang (ombres)
+$fifth-color: #082314;        // Vert forêt (alternatif)
+$sixth-color: #D1B488;        // Parchemin (texte principal)
+$seventh-color: #5D271B;      // Brun rouille (bordures)
+$eighth-color: #39442C;       // Vert olive (alternatif)
+
+// ============================================
+// 📏 SYSTÈME D'ESPACEMENT
+// ============================================
 $base-spacing: 16px;
-$large-spacing: $base-spacing * 2;
-$small-spacing: $base-spacing / 2;
-$font-stack: 'Helvetica, Arial, sans-serif';
+$small-spacing:  $base-spacing / 2;      // 8px
+$large-spacing:  $base-spacing * 2;      // 32px
+$xlarge-spacing: $base-spacing * 3;     // 48px
+$xxlarge-spacing: $base-spacing * 4;    // 64px
+
+// ============================================
+// 🔤 TYPOGRAPHIE
+// ============================================
+// Pour un style médiéval, ajoutez cette Google Font dans votre index.html:
+// <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+$font-stack: 'Cinzel', 'Georgia', serif;
+$font-stack-alt: 'Helvetica', 'Arial', sans-serif;
+
+// Tailles de police
+$font-size-small: 0.875rem;    // 14px
+$font-size-base: 1rem;         // 16px
+$font-size-large: 1.25rem;     // 20px
+$font-size-xlarge: 1.5rem;     // 24px
+$font-size-xxlarge: 2rem;      // 32px
+
+// ============================================
+// 🌓 OMBRES
+// ============================================
+$shadow-small: 0 2px 4px rgba($fourth-color, 0.3);
+$shadow-medium: 0 4px 8px rgba($fourth-color, 0.4);
+$shadow-large: 0 8px 16px rgba($fourth-color, 0.5);
+$shadow-xlarge: 0 12px 28px rgba($fourth-color, 0.6);
+
+// Ombres thématiques
+$shadow-glow-gold: 0 0 20px rgba($third-color, 0.5);
+$shadow-glow-blood: 0 0 30px rgba($fourth-color, 0.7);
+
+// ============================================
+// 🎭 TRANSITIONS
+// ============================================
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ============================================
+// 📱 BREAKPOINTS RESPONSIVE
+// ============================================
+$breakpoint-mobile: 480px;
+$breakpoint-tablet:  768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1440px;
+
+// ============================================
+// 🎨 BORDURES
+// ============================================
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+$border-radius-xlarge: 16px;
+
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// ============================================
+// 📐 Z-INDEX (pour la gestion des couches)
+// ============================================
+$z-index-base: 1;
+$z-index-dropdown: 100;
+$z-index-modal: 1000;
+$z-index-tooltip: 1100;
