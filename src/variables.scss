@@ -1,5 +1,5 @@
 // ============================================
-// 🎨 PALETTE GAME OF THRONES
+// PALETTE GAME OF THRONES
 // ============================================
 $primary-color: #14150F;      // Noir Westeros (fond)
 $secondary-color: #1D1C17;    // Gris nuit (cartes)
@@ -11,7 +11,7 @@ $seventh-color: #5D271B;      // Brun rouille (bordures)
 $eighth-color: #39442C;       // Vert olive (alternatif)
 
 // ============================================
-// 📏 SYSTÈME D'ESPACEMENT
+// SYSTÈME D'ESPACEMENT
 // ============================================
 $base-spacing: 16px;
 $small-spacing:  $base-spacing / 2;      // 8px
@@ -20,7 +20,7 @@ $xlarge-spacing: $base-spacing * 3;     // 48px
 $xxlarge-spacing: $base-spacing * 4;    // 64px
 
 // ============================================
-// 🔤 TYPOGRAPHIE
+// TYPOGRAPHIE
 // ============================================
 // Pour un style médiéval, ajoutez cette Google Font dans votre index.html:
 // <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ $font-size-xlarge: 1.5rem;     // 24px
 $font-size-xxlarge: 2rem;      // 32px
 
 // ============================================
-// 🌓 OMBRES
+// OMBRES
 // ============================================
 $shadow-small: 0 2px 4px rgba($fourth-color, 0.3);
 $shadow-medium: 0 4px 8px rgba($fourth-color, 0.4);
@@ -47,14 +47,14 @@ $shadow-glow-gold: 0 0 20px rgba($third-color, 0.5);
 $shadow-glow-blood: 0 0 30px rgba($fourth-color, 0.7);
 
 // ============================================
-// 🎭 TRANSITIONS
+// TRANSITIONS
 // ============================================
 $transition-fast: 0.15s ease;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
 
 // ============================================
-// 📱 BREAKPOINTS RESPONSIVE
+// BREAKPOINTS RESPONSIVE
 // ============================================
 $breakpoint-mobile: 480px;
 $breakpoint-tablet:  768px;
@@ -62,7 +62,7 @@ $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;
 
 // ============================================
-// 🎨 BORDURES
+// BORDURES
 // ============================================
 $border-radius-small: 4px;
 $border-radius-medium: 8px;
@@ -74,7 +74,7 @@ $border-width-medium: 2px;
 $border-width-thick: 3px;
 
 // ============================================
-// 📐 Z-INDEX (pour la gestion des couches)
+// Z-INDEX (pour la gestion des couches)
 // ============================================
 $z-index-base: 1;
 $z-index-dropdown: 100;
