@@ -1,14 +1,23 @@
-<h2>List of Continents</h2>
-@if (continentsFromParent.length > 0) {
-  <div class="characters-wrapper">
-    <!--  @for pour itérer sur notre tableau charactersFromApi-->
-    <!--  track OBLIGATOIRE pour éviter les pertes de performances / rattacher à une propriété unique.-->
-    @for (continent of continentsFromParent; track continent.id) {
-      <div class="character-card">
-        <h3>{{ continent.name }}</h3>
+@if ((continentsFromParent?.length ?? 0) > 0) {
+  <section class="continents">
+    <header class="continents__header">
+      <h2 class="continents__title">Continents</h2>
+      <p class="continents__subtitle">
+        {{ continentsFromParent.length }} continent{{ continentsFromParent.length > 1 ? 's' : '' }}
+      </p>
+    </header>
+
+    <div class="continents__scroller">
+      <div class="continents__row">
+        @for (continent of continentsFromParent; track continent.id) {
+          <button class="continent-chip" type="button">
+            <span class="continent-chip__id">#{{ continent.id }}</span>
+            <span class="continent-chip__name">{{ continent.name }}</span>
+          </button>
+        }
       </div>
-    }
-  </div>
+    </div>
+  </section>
 } @else {
-  <p>No characters found</p>
+  <p class="continents__empty">Aucun continent à afficher.</p>
 }

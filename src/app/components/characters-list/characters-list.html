@@ -1,40 +1,68 @@
-<section class="got-characters-section">
-  <h2 class="got-title">List of Characters</h2>
+<section class="characters">
+  <header class="characters__header">
+    <h1 class="characters__title">Characters</h1>
+    <p class="characters__subtitle">
+      {{ charactersFromParent?.length ?? 0 }} result{{ (charactersFromParent?.length ?? 0) > 1 ? 's' : '' }}
+    </p>
+  </header>
 
-  @if (charactersFromParent. length > 0) {
-    <div class="characters-grid">
-      <!-- track character.id pour la performance -->
+  @if ((charactersFromParent?.length ?? 0) > 0) {
+    <div class="characters__grid">
       @for (character of charactersFromParent; track character.id) {
-        <article class="character-card">
-          <!-- Wrapper pour maintenir le ratio d'image -->
-          <div class="character-image-wrapper">
+        <article [class]="character.family | slugify" class="character-card">
+          <div class="character-card__poster">
             <img
-              [src]="character.imageUrl"
-              [alt]="'Portrait of ' + character.fullName"
-              class="character-image"
+              class="character-card__image"
+              [src]="character.imageUrl || character.image"
+              [alt]="character.fullName || (character.firstName + ' ' + character.lastName)"
               loading="lazy"
             />
-          </div>
 
-          <!-- Informations du personnage -->
-          <div class="character-info">
-            <h3 class="character-name">
-              <span class="sigil">∇</span> {{ character.fullName }}
-            </h3>
-            <p class="character-title">
-              <span class="icon">∴</span> {{ character. title }}
-            </p>
-            <p class="character-family">
-              <span class="icon">ψ</span> House {{ character.family }}
-            </p>
+            <div class="character-card__tag">
+              #{{ character.id }}
+            </div>
+
+            @if (character.family) {
+              <div class="character-card__badge">
+                {{ character.family }}
+              </div>
+            }
+
+            <div class="character-card__overlay">
+              <h2 class="character-card__name">
+                {{ character.fullName || (character.firstName + ' ' + character.lastName) }}
+              </h2>
+
+              @if (character.title) {
+                <p class="character-card__title">{{ character.title }}</p>
+              }
+
+              <div class="character-card__meta">
+                <div class="character-card__meta-row">
+                  <span class="character-card__meta-label">First name</span>
+                  <span class="character-card__meta-value">{{ character.firstName | slugify  }}</span>
+                </div>
+                <div class="character-card__meta-row">
+                  <span class="character-card__meta-label">Last name</span>
+                  <span class="character-card__meta-value">{{ character.lastName }}</span>
+                </div>
+
+                @if (character.fullName) {
+                  <div class="character-card__meta-row">
+                    <span class="character-card__meta-label">Full name</span>
+                    <span class="character-card__meta-value">{{ character.fullName  | suffix: '⚔️' }}</span>
+                  </div>
+                }
+              </div>
+            </div>
           </div>
         </article>
       }
     </div>
   } @else {
-    <p class="no-data-message">
-      <span class="raven-icon">🦅</span>
-      The ravens have brought no news...
-    </p>
+    <div class="characters__empty">
+      <p class="characters__empty-title">No characters found</p>
+      <p class="characters__empty-hint">Try another name or spelling.</p>
+    </div>
   }
 </section>

@@ -1,17 +1,16 @@
-import { Injectable, inject } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Continents} from '../models/continents.models';
 import {Observable} from 'rxjs';
+import {Continents} from '../models/continents.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ContinentService {
+export class ContinentsService {
   private continentsUrl = 'https://thronesapi.com/api/v2/Continents';
   private httpClient = inject(HttpClient);
 
-  public getContinents() : Observable<Continents[]> {
+  public getAllContinents () : Observable<Continents[]> {
     return this.httpClient.get<Continents[]>(this.continentsUrl);
   }
-
 }

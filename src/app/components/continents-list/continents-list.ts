@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Continents } from '../../shared/models/continents.models';
+import {Component, Input} from '@angular/core';
+import {Continents} from '../../shared/models/continents.model';
 
 @Component({
   selector: 'app-continents-list',
